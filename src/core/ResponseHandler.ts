@@ -1,9 +1,10 @@
 import { HandlerParams } from '../types'
 import { ErrorResponse } from './ErrorResponse'
 import { Result } from './Result'
+import { Express } from 'express'
 
 export class ResponseHandler {
-  static initialize(options?: Partial<HandlerParams>) {
+  static initialize(app: Express, options?: Partial<HandlerParams>) {
     const opt: HandlerParams = {
       logger: typeof options?.logger !== 'undefined' ? options?.logger : false,
     }
